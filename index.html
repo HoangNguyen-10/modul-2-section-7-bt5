@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            color:blue;
+        }
+        td{
+            width:200px;
+        }
+        select{
+            width:200px;
+        }
+        button{
+            color:white;
+            background-color: blue;
+            border:none;
+            border-radius:3px;
+            padding: 2px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>Amount</th>
+            <th>From Currency</th>
+            <th>To Currency</th>
+
+        </tr>
+        <tr>
+            <td><input type="text" name="" id="quantity"></td>
+            <td>
+                <select name="" id="from">
+                    <option value="1">VND</option>
+                    <option value="23000">USD</option>
+                </select>
+            </td>
+            <td>
+                <select name="" id="to">
+                    <option value="23000">USD</option>
+                    <option value="1">VND</option>
+                </select>
+            </td>
+            <td>
+                <button onclick="check()">Convert</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <p id="result"></p>
+            </td>
+        </tr>
+    </table>
+    <script>
+
+        function check() {
+            let amount = +document.getElementById('quantity').value;
+            let a = +document.getElementById('from').value;
+            let b = +document.getElementById('to').value;
+            let rate = a / b;
+            let result = amount * rate;
+            document.getElementById('result').innerHTML = '<span>Result: ' + result;
+        }
+    </script>
+</body>
+
+</html>
